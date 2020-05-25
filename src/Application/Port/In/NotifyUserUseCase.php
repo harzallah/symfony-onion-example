@@ -2,6 +2,7 @@
 
 namespace App\Application\Port\In;
 
-interface NotifyUserUseCase {
-    public function notifyUser(  );
+interface NotifyUserUseCase
+{
+    public function notifyUser();
 }

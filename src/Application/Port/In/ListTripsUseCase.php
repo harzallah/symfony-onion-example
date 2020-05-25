@@ -2,6 +2,7 @@
 
 namespace App\Application\Port\In;
 
-interface ListTripsUseCase {
+interface ListTripsUseCase
+{
     public function listTrips(string $destinationId);
 }

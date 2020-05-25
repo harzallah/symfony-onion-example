@@ -1,6 +1,8 @@
 {
     "type": "project",
     "license": "proprietary",
+    "name": "harzallah/symfony-onion-example",
+    "description": "Example Symfony Project with onion architecture",
     "require": {
         "php": "^7.1.3",
         "ext-ctype": "*",
@@ -28,6 +30,9 @@
         "symfony/yaml": "4.4.*"
     },
     "require-dev": {
+        "phpstan/phpstan": "^0.12.3",
+        "sensiolabs/security-checker": "^6.0",
+        "squizlabs/php_codesniffer": "^3.5",
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "*",
@@ -60,13 +65,39 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "security-checker security:check": "script"
         },
         "post-install-cmd": [
             "@auto-scripts"
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "ci": [
+            "@composer-validate",
+            "@security-checker",
+            "@phpcs",
+            "@phpstan",
+            "@test"
+        ],
+        "composer-validate": [
+            "@composer validate --no-check-all --strict"
+        ],
+        "security-checker": [
+            "@php vendor/bin/security-checker security:check composer.lock"
+        ],
+        "phpcs": [
+            "@php vendor/bin/phpcs --ignore=*/Migrations/* --report=summary --standard=PSR12 src tests"
+        ],
+        "phpstan": [
+            "@php vendor/bin/phpstan analyse src --level=4"
+        ],
+        "test": [
+            "@php bin/phpunit --coverage-text --colors=never"
+        ],
+        "phpcbf": [
+            "@php vendor/bin/phpcbf --standard=PSR12 src tests"
         ]
     },
     "conflict": {
@@ -74,7 +105,7 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": false,
+            "allow-contrib": true,
             "require": "4.4.*"
         }
     }

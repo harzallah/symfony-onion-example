@@ -2,6 +2,7 @@
 
 namespace App\Application\Port\In;
 
-interface GetTripUseCase {
-    public function getTrip(  );
+interface GetTripUseCase
+{
+    public function getTrip(string $tripId);
 }

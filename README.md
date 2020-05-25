@@ -1,3 +1,3 @@
-# Symfony Onion / Hexagoanl Architecture Example
+# Symfony Onion / hexagonal / Clean Architecture Example
 
-This is an example entreprise carpooling application backend implementing the onion / hexagoanl / clean architecture with php Symfony
+This is an example entreprise carpooling application backend implementing the onion / hexagonal / clean architecture with php Symfony

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Application\Entity;
+namespace App\Domain\Entity;
 
 class Destination
 {
     private $id;
     private $name;
 
-    public function __construct(string $id,string $name)
+    public function __construct(string $id, string $name)
     {
         $this->id = $id;
         $this->name = $name;
@@ -15,7 +15,7 @@ class Destination
 
     /**
      * Get the value of name
-     */ 
+     */
     public function getName()
     {
         return $this->name;
@@ -23,7 +23,7 @@ class Destination
 
     /**
      * Get the value of id
-     */ 
+     */
     public function getId()
     {
         return $this->id;

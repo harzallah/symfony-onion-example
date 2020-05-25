@@ -2,6 +2,7 @@
 
 namespace App\Application\Port\In;
 
-interface ListDestinationsUseCase {
-    public function listDestinations(  );
+interface ListDestinationsUseCase
+{
+    public function listDestinations();
 }

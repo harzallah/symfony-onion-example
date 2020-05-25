@@ -1,24 +1,28 @@
 <?php
 
-namespace App\Application\Entity;
+namespace App\Domain\Entity;
 
-use App\Application\Entity\Destination;
-use App\Application\Entity\Seat;
-use App\Application\Entity\User;
+use App\Domain\Entity\Destination;
+use App\Domain\Entity\Seat;
+use App\Domain\Entity\User;
+use DateTime;
 
 class Trip
 {
+    private $id;
     private $dest;
     private $seats;
     private $driver;
     private $depDate;
 
-    public function __constructor(
+    public function __construct(
+        string $id,
         Destination $dest,
         array $seats,
         User $driver,
-        \DateTime $depDate
+        DateTime $depDate
     ) {
+        $this->id = $id;
         $this->dest = $dest;
         $this->seats = $seats;
         $this->driver = $driver;

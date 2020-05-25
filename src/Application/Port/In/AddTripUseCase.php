@@ -2,6 +2,9 @@
 
 namespace App\Application\Port\In;
 
-interface AddTripUseCase {
-    public function addTrip(  );
+use App\Application\Port\In\Command\AddTripCommand;
+
+interface AddTripUseCase
+{
+    public function addTrip(AddTripCommand $tripCommand);
 }

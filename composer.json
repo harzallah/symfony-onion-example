@@ -98,7 +98,7 @@
             "@php bin/phpunit --coverage-text"
         ],
         "phpcbf": [
-            "@php vendor/bin/phpcbf --standard=PSR12 src tests"
+            "@php vendor/bin/phpcbf --standard=PSR12 src tests || true"
         ]
     },
     "conflict": {

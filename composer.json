@@ -77,6 +77,7 @@
         "ci": [
             "@composer-validate",
             "@security-checker",
+            "@phpcbf",
             "@phpcs",
             "@phpstan",
             "@test"
@@ -94,7 +95,7 @@
             "@php vendor/bin/phpstan analyse src --level=4"
         ],
         "test": [
-            "@php bin/phpunit --coverage-text --colors=never"
+            "@php bin/phpunit --coverage-text"
         ],
         "phpcbf": [
             "@php vendor/bin/phpcbf --standard=PSR12 src tests"

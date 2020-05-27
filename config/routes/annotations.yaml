@@ -1,5 +1,5 @@
 controllers:
-    resource: ../../src/Adapter/In/web/
+    resource: ../../src/Adapter/In/Web/
     type: annotation
 
 kernel:
